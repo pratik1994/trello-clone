@@ -84,7 +84,9 @@ class List extends Component {
                 deleteList={this.deleteList}
               />
             ) : (
-              <div className="List-Title">{list.title}</div>
+              <div className="List-Title" onClick={this.toggleEditingTitle}>
+                {list.title}{" "}
+              </div>
             )}
 
             <Droppable droppableId={list._id}>

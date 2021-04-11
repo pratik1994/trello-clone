@@ -15,12 +15,6 @@
   overflow-wrap: break-word;
 }
 
-.List-Title:hover {
-  background-color: rgba(9, 45, 66, 0.13);
-  color: #17394d;
-  text-decoration: underline;
-}
-
 .Toggle-Add-Card {
   cursor: pointer;
   padding: 10px;
