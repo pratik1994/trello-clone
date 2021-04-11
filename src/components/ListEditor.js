@@ -6,14 +6,14 @@ import TextareaAutosize from "react-textarea-autosize";
 class ListEditor extends Component {
   ref = React.createRef();
 
-  onEnter = e => {
+  onEnter = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
       this.props.saveList();
     }
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     const node = this.ref.current;
 
     if (node.contains(e.target)) {
@@ -45,7 +45,7 @@ class ListEditor extends Component {
           onKeyDown={this.onEnter}
           style={{ width: deleteList ? 220 : 245 }}
         />
-        {deleteList && <ion-icon name="trash" onClick={deleteList} />}
+        <ion-icon name="trash" onClick={deleteList} />
       </div>
     );
   }

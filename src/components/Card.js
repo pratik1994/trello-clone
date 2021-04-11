@@ -9,7 +9,7 @@ import CardEditor from "./CardEditor";
 class Card extends Component {
   state = {
     hover: false,
-    editing: false
+    editing: false,
   };
 
   startHover = () => this.setState({ hover: true });
@@ -19,19 +19,19 @@ class Card extends Component {
     this.setState({
       hover: false,
       editing: true,
-      text: this.props.card.text
+      text: this.props.card.text,
     });
 
   endEditing = () => this.setState({ hover: false, editing: false });
 
-  editCard = async text => {
+  editCard = async (text) => {
     const { card, dispatch } = this.props;
 
     this.endEditing();
 
     dispatch({
       type: "CHANGE_CARD_TEXT",
-      payload: { cardId: card._id, cardText: text }
+      payload: { cardId: card._id, cardText: text },
     });
   };
 
@@ -41,7 +41,7 @@ class Card extends Component {
     if (window.confirm("Are you sure to delete this card?")) {
       dispatch({
         type: "DELETE_CARD",
-        payload: { cardId: card._id, listId }
+        payload: { cardId: card._id, listId },
       });
     }
   };
@@ -64,8 +64,8 @@ class Card extends Component {
             >
               {hover && (
                 <div className="Card-Icons">
-                  <div className="Card-Icon" onClick={this.startEditing}>
-                    <ion-icon name="create" />
+                  <div className="Card-Icon" onClick={this.deleteCard}>
+                    <ion-icon name="close" />
                   </div>
                 </div>
               )}
@@ -89,7 +89,7 @@ class Card extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  card: state.cardsById[ownProps.cardId]
+  card: state.cardsById[ownProps.cardId],
 });
 
 export default connect(mapStateToProps)(Card);

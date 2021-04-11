@@ -1,11 +1,9 @@
 .App {
-  background: rgb(75, 191, 107);
   height: 100vh;
 }
 
 .Header {
-  background: rgba(0, 0, 0, 0.15);
-  color: white;
+  color: black;
   padding: 5px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   text-align: center;
